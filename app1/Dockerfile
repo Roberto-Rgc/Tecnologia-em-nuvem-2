@@ -5,7 +5,7 @@ FROM php:8.2-apache
 ENV PORT=8080
 
 #Ativa o mod_rewrite para URLs amigáveis
-RUN a2emod rewrite
+RUN a2enmod rewrite
 
 #Copia o código da aplicação
 COPY . /var/www/html/
