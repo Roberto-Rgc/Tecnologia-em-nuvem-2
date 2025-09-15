@@ -5,7 +5,7 @@ FROM php:8.2-apache
 ENV PORT=8080
 
 #Ativa o mod_rewrite para URLs amigáveis
-RUN a2emod rewrite
+RUN a2enmod rewrite
 
 #Copia o código da aplicação
 COPY . /var/www/html/
@@ -28,4 +28,4 @@ RUN sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf && \
  EXPOSE ${PORT}
 
  #inicia o apache
- CMD ["apache2-foreground"]
+ CMD ["apache2-foreground"] 
